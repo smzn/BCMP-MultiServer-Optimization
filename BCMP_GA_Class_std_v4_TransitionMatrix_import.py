@@ -50,7 +50,7 @@ class BCMP_GA_Class:
             with open(self.process_text, 'a') as f:
                 mem = psutil.virtual_memory()
                 cpu = psutil.cpu_percent(interval=1)
-                print('初期遺伝子、推移確率のブロードキャスト完了, Memory = {0}GB, CPU = {1}, elapse = {2}'.format(mem.used/10**9, cpu, time.time() - self.start), file=f)
+                print('初期遺伝子、推移確率のブロードキャスト完了, Memory = {0}GB, CPU = {1}'.format(mem.used/10**9, cpu), file=f)
         
     #https://machinelearningmastery.com/simple-genetic-algorithm-from-scratch-in-python/
     # genetic algorithm
@@ -443,7 +443,7 @@ if __name__ == '__main__':
     ngen = int(sys.argv[5]) #世代数
     U = int(sys.argv[6]) #最大窓口数
     w = int(sys.argv[7]) #コストウエイト P->wに変更(2023/05/09)
-    transition_file = 'P_std_33_2_500_76_30.csv' #推移確率はファイルで取り込む
+    transition_file = '../../P_std_33_2_500_76_30.csv' #推移確率はファイルで取り込む
     transition_matrix = pd.read_csv(transition_file, header=None).values
     crosspb = 0.5
     mutpb = 0.2
