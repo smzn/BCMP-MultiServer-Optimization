@@ -457,7 +457,7 @@ if __name__ == '__main__':
         #確認
         sum = 0
         for i in range(N):
-            sum += P * (best[i] - 1)
+            sum += w * (best[i] - 1)
         print('std = {0}, cost = {1}'.format(score - sum, sum))
         print ("calclation_time:{0}".format(elapsed_time) + "[sec]")
 #実行方法
